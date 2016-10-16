@@ -9,6 +9,10 @@
  * the linting exception.
  */
 
+// Plugin needed for Material-UI until the official React version is released
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
