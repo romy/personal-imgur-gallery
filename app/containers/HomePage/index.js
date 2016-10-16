@@ -6,16 +6,15 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 
-import messages from './messages';
+import Login from './Login';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-        <FormattedMessage {...messages.header} />
+        <Login />
       </MuiThemeProvider>
     );
   }
