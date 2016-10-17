@@ -1,6 +1,8 @@
 import ActionExitToApp from 'material-ui/svg-icons/action/exit-to-app';
+import { defaultProps, setDisplayName, setPropTypes } from 'recompose';
 import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
+import R from 'ramda';
 
 
 const Login = () =>
@@ -12,7 +14,16 @@ const Login = () =>
     <ActionExitToApp />
   </RaisedButton>;
 
-Login.displayName = 'Login';
+const enhance = R.pipe(
+  defaultProps({
+    getImgurToken: () => {},
+  }),
+  setPropTypes({
+    getImgurToken: React.PropTypes.func,
+  }),
+  setDisplayName('Login'),
+);
 
 
-export default Login;
+export { Login };
+export default enhance(Login);

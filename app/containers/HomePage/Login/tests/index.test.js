@@ -2,7 +2,7 @@ import expect from 'expect';
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import Login from '../index';
+import { Login } from '../index';
 
 
 describe('<Login />', () => {
