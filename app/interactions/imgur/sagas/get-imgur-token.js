@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 
-import openImgurPopup from './open-imgur-popup';
+import openImgurPopup from '../open-imgur-popup';
 import waitForToken from './wait-for-token';
 
 
