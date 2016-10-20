@@ -15,7 +15,7 @@ describe('saga waitForToken', () => {
 
   it('should parse the query string into an object', () => {
     const popup = {
-      location: { hash: '#access_token=1111&name=One' },
+      location: { hash: '#access_token=1001&account_username=Mio' },
       closed: false,
       close: () => {},
     };
@@ -24,14 +24,14 @@ describe('saga waitForToken', () => {
     gen.next();
     const next = gen.next();
 
-    expect(next.value).toEqual({ access_token: '1111', name: 'One' });
+    expect(next.value).toEqual({ token: '1001', username: 'Mio' });
   });
 
   it('should close the popup', () => {
     const closePopup = createSpy();
 
     const popup = {
-      location: { hash: '#access_token=1111&name=One' },
+      location: { hash: '#access_token=1001&account_username=Mio' },
       closed: false,
       close: closePopup,
     };

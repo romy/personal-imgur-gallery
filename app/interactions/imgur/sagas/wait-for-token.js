@@ -23,11 +23,14 @@ function* waitForToken(popup) {
       popup.close();
       const response = querystring.parse(hash.substr(1));
 
-      if (!response.access_token) {
+      if (!response.access_token || !response.account_username) {
         throw new Error(`Failed to parse response: ${response}`);
       }
 
-      return response;
+      return {
+        token: response.access_token,
+        username: response.account_username,
+      };
     }
   }
 }
