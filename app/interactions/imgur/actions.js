@@ -1,7 +1,7 @@
-const getImgurToken = () =>
+const getAccountData = () =>
   ({
-    type: 'GET_IMGUR_TOKEN',
+    type: 'GET_ACCOUNT_DATA',
   });
 
 
-export default getImgurToken;
+export default getAccountData;

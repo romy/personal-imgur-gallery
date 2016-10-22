@@ -4,15 +4,15 @@ import openImgurPopup from '../open-imgur-popup';
 import waitForToken from './wait-for-token';
 
 
-function* getImgurToken() {
+function* getAccountData() {
   try {
     const popup = yield call(openImgurPopup);
     const response = yield call(waitForToken, popup);
-    yield put({ type: 'GET_TOKEN_SUCCESS', payload: response });
+    yield put({ type: 'GET_ACCOUNT_DATA_SUCCESS', payload: response });
   } catch (err) {
-    yield put({ type: 'GET_TOKEN_FAILED', message: err.message });
+    yield put({ type: 'GET_ACCOUNT_DATA_FAILED', message: err.message });
   }
 }
 
 
-export default getImgurToken;
+export default getAccountData;

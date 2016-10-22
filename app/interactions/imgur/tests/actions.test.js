@@ -1,12 +1,12 @@
 import expect from 'expect';
 
-import getImgurToken from '../actions';
+import getAccountData from '../actions';
 
 
-describe('action creator getImgurToken', () => {
-  it('should return an action with type GET_IMGUR_TOKEN', () => {
-    const action = getImgurToken();
+describe('action creator getAccountData', () => {
+  it('should return an action with type GET_ACCOUNT_DATA', () => {
+    const action = getAccountData();
 
-    expect(action.type).toEqual('GET_IMGUR_TOKEN');
+    expect(action.type).toEqual('GET_ACCOUNT_DATA');
   });
 });

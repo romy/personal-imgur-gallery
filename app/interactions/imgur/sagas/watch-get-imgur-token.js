@@ -1,11 +1,11 @@
 import { takeLatest } from 'redux-saga';
 
-import getImgurToken from './get-imgur-token';
+import getAccountData from './get-account-data';
 
 
-function* watchGetImgurToken() {
-  yield* takeLatest('GET_IMGUR_TOKEN', getImgurToken);
+function* watchGetAccountData() {
+  yield* takeLatest('GET_ACCOUNT_DATA', getAccountData);
 }
 
 
-export default watchGetImgurToken;
+export default watchGetAccountData;

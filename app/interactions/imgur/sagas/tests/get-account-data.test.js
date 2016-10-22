@@ -1,21 +1,21 @@
 import { call, put } from 'redux-saga/effects';
 import expect from 'expect';
 
-import getImgurToken from '../get-imgur-token';
+import getAccountData from '../get-account-data';
 import openImgurPopup from '../../open-imgur-popup';
 import waitForToken from '../wait-for-token';
 
 
-describe('saga getImgurToken', () => {
+describe('saga getAccountData', () => {
   it('should call function openImgurPopup', () => {
-    const gen = getImgurToken();
+    const gen = getAccountData();
     const next = gen.next();
 
     expect(next.value).toEqual(call(openImgurPopup));
   });
 
   it('should call function waitForToken', () => {
-    const gen = getImgurToken();
+    const gen = getAccountData();
     const popup = {};
 
     gen.next();
@@ -24,9 +24,9 @@ describe('saga getImgurToken', () => {
     expect(next.value).toEqual(call(waitForToken, popup));
   });
 
-  it('should put action GET_TOKEN_SUCCESS on success', () => {
-    const gen = getImgurToken();
-    const action = { type: 'GET_TOKEN_SUCCESS', payload: undefined };
+  it('should put action GET_ACCOUNT_DATA_SUCCESS on success', () => {
+    const gen = getAccountData();
+    const action = { type: 'GET_ACCOUNT_DATA_SUCCESS', payload: undefined };
 
     gen.next();
     gen.next();
@@ -35,9 +35,9 @@ describe('saga getImgurToken', () => {
     expect(next.value).toEqual(put(action));
   });
 
-  it('should put action GET_TOKEN_FAILED on failure', () => {
-    const gen = getImgurToken();
-    const action = { type: 'GET_TOKEN_FAILED', message: 'error message' };
+  it('should put action GET_ACCOUNT_DATA_FAILED on failure', () => {
+    const gen = getAccountData();
+    const action = { type: 'GET_ACCOUNT_DATA_FAILED', message: 'error message' };
     const error = new Error('error message');
 
     gen.next();

@@ -16,9 +16,9 @@ describe('imgur reducer', () => {
     expect(state).toEqual(initialState);
   });
 
-  it('should return the payload from action GET_TOKEN_SUCCESS', () => {
+  it('should return the payload from action GET_ACCOUNT_DATA_SUCCESS', () => {
     const action = {
-      type: 'GET_TOKEN_SUCCESS',
+      type: 'GET_ACCOUNT_DATA_SUCCESS',
       payload: {
         token: '1001',
         username: 'Mio',
@@ -34,9 +34,9 @@ describe('imgur reducer', () => {
     expect(state).toEqual(expectedState);
   });
 
-  it('should return the error message from action GET_TOKEN_FAILED', () => {
+  it('should return the error message from action GET_ACCOUNT_DATA_FAILED', () => {
     const action = {
-      type: 'GET_TOKEN_FAILED',
+      type: 'GET_ACCOUNT_DATA_FAILED',
       message: 'error message',
     };
     const expectedState = fromJS({

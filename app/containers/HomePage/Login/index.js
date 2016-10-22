@@ -6,30 +6,30 @@ import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
 import R from 'ramda';
 
-import getImgurTokenAction from '../../../interactions/imgur/actions';
+import getAccountDataAction from '../../../interactions/imgur/actions';
 
 
-const Login = ({ getImgurToken }) => // eslint-disable-line react/prop-types
+const Login = ({ getAccountData }) => // eslint-disable-line react/prop-types
   <RaisedButton
     label="login with imgur"
     fullWidth
     style={{ marginTop: '15%' }}
-    onClick={getImgurToken}
+    onClick={getAccountData}
   >
     <ActionExitToApp />
   </RaisedButton>;
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({
-    getImgurToken: getImgurTokenAction,
+    getAccountData: getAccountDataAction,
   }, dispatch);
 
 const enhance = R.pipe(
   defaultProps({
-    getImgurToken: () => {},
+    getAccountData: () => {},
   }),
   setPropTypes({
-    getImgurToken: React.PropTypes.func,
+    getAccountData: React.PropTypes.func,
   }),
   connect(null, mapDispatchToProps),
   setDisplayName('Login'),

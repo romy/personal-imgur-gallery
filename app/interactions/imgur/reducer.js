@@ -9,13 +9,13 @@ const initialState = fromJS({
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case 'GET_TOKEN_SUCCESS':
+    case 'GET_ACCOUNT_DATA_SUCCESS':
       return state.merge({
         token: action.payload.token,
         username: action.payload.username,
         error: null,
       });
-    case 'GET_TOKEN_FAILED':
+    case 'GET_ACCOUNT_DATA_FAILED':
       return state.merge({
         token: null,
         username: null,
