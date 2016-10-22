@@ -2,12 +2,12 @@ import { call } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 import expect, { createSpy } from 'expect';
 
-import waitForToken from '../wait-for-token';
+import waitForAccountData from '../wait-for-account-data';
 
 
-describe('saga waitForToken', () => {
+describe('saga waitForAccountData', () => {
   it('should call delay with 100ms', () => {
-    const gen = waitForToken();
+    const gen = waitForAccountData();
     const next = gen.next();
 
     expect(next.value).toEqual(call(delay, 100));
@@ -20,7 +20,7 @@ describe('saga waitForToken', () => {
       close: () => {},
     };
 
-    const gen = waitForToken(popup);
+    const gen = waitForAccountData(popup);
     gen.next();
     const next = gen.next();
 
@@ -36,7 +36,7 @@ describe('saga waitForToken', () => {
       close: closePopup,
     };
 
-    const gen = waitForToken(popup);
+    const gen = waitForAccountData(popup);
     gen.next();
     gen.next();
 

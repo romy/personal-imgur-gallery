@@ -3,7 +3,7 @@ import expect from 'expect';
 
 import getAccountData from '../get-account-data';
 import openImgurPopup from '../../open-imgur-popup';
-import waitForToken from '../wait-for-token';
+import waitForAccountData from '../wait-for-account-data';
 
 
 describe('saga getAccountData', () => {
@@ -14,14 +14,14 @@ describe('saga getAccountData', () => {
     expect(next.value).toEqual(call(openImgurPopup));
   });
 
-  it('should call function waitForToken', () => {
+  it('should call function waitForAccountData', () => {
     const gen = getAccountData();
     const popup = {};
 
     gen.next();
     const next = gen.next(popup);
 
-    expect(next.value).toEqual(call(waitForToken, popup));
+    expect(next.value).toEqual(call(waitForAccountData, popup));
   });
 
   it('should put action GET_ACCOUNT_DATA_SUCCESS on success', () => {

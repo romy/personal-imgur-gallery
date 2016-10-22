@@ -2,14 +2,14 @@ import expect from 'expect';
 import { fork } from 'redux-saga/effects';
 
 import sagas from '../sagas';
-import watchGetImgurToken from '..//interactions/imgur/sagas/watch-get-imgur-token';
+import watchGetAccountData from '../interactions/imgur/sagas/watch-get-account-data';
 
 
 describe('sagas', () => {
-  it('should fork saga watchGetImgurToken', () => {
+  it('should fork saga watchGetAccountData', () => {
     const gen = sagas();
     const next = gen.next();
 
-    expect(next.value[0]).toEqual(fork(watchGetImgurToken));
+    expect(next.value[0]).toEqual(fork(watchGetAccountData));
   });
 });

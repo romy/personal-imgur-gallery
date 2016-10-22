@@ -1,11 +1,11 @@
 import { fork } from 'redux-saga/effects';
 
-import watchGetImgurToken from './interactions/imgur/sagas/watch-get-imgur-token';
+import watchGetAccountData from './interactions/imgur/sagas/watch-get-account-data';
 
 
 function* sagas() {
   yield [
-    fork(watchGetImgurToken),
+    fork(watchGetAccountData),
   ];
 }
 

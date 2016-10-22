@@ -5,7 +5,7 @@ import querystring from 'query-string';
 
 const popupPollingInterval = 100;
 
-function* waitForToken(popup) {
+function* waitForAccountData(popup) {
   let hash;
 
   while (true) { // eslint-disable-line no-constant-condition
@@ -36,4 +36,4 @@ function* waitForToken(popup) {
 }
 
 
-export default waitForToken;
+export default waitForAccountData;

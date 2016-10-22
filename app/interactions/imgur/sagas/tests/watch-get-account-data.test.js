@@ -1,19 +1,19 @@
 import expect from 'expect';
 
 import getAccountData from '../get-account-data';
-import watchGetImgurToken from '../watch-get-imgur-token';
+import watchGetAccountData from '../watch-get-account-data';
 
 
-describe('saga watchGetImgurToken', () => {
+describe('saga watchGetAccountData', () => {
   it('should watch action GET_ACCOUNT_DATA', () => {
-    const gen = watchGetImgurToken();
+    const gen = watchGetAccountData();
     const next = gen.next();
 
     expect(next.value.TAKE.pattern).toEqual('GET_ACCOUNT_DATA');
   });
 
   it('should call function getAccountData', () => {
-    const gen = watchGetImgurToken();
+    const gen = watchGetAccountData();
     gen.next();
     const next = gen.next();
 
