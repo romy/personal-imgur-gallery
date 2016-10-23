@@ -8,9 +8,14 @@ import R from 'ramda';
 
 import { getAlbumImages as getAlbumImagesAction } from 'interactions/albums/actions';
 
+const styles = {
+  card: {
+    margin: '5%',
+  },
+};
 
 const AlbumCard = ({ title, src, description, getAlbumImages, id }) => // eslint-disable-line react/prop-types
-  <Card style={{ margin: '5%' }}>
+  <Card style={styles.card}>
     <CardMedia overlay={<CardTitle title={title} />} >
       <img src={src} alt={title} />
     </CardMedia>

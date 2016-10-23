@@ -7,6 +7,12 @@ import AlbumCard from './album-card';
 import { selectAlbumIds } from 'interactions/albums/selectors';
 import { selectUsername } from 'interactions/user/selectors';
 
+const styles = {
+  header: {
+    margin: '5%',
+    fontSize: '300%',
+  },
+};
 
 const AlbumCollection = ({ username, albumIds }) => { // eslint-disable-line react/prop-types
   const albumCards = R.map(
@@ -16,7 +22,7 @@ const AlbumCollection = ({ username, albumIds }) => { // eslint-disable-line rea
 
   return (
     <div>
-      <h1 style={{ margin: '5%', fontSize: '300%' }}>Albums of {username}</h1>
+      <h1 style={styles.header}>Albums of {username}</h1>
       {albumCards}
     </div>
   );

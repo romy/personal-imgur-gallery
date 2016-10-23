@@ -8,12 +8,17 @@ import R from 'ramda';
 
 import getAccountDataAction from 'interactions/user/actions';
 
+const styles = {
+  button: {
+    marginTop: '2%',
+  },
+};
 
 const LoginButton = ({ getAccountData }) => // eslint-disable-line react/prop-types
   <RaisedButton
     label="Login with Imgur"
     fullWidth
-    style={{ marginTop: '2%' }}
+    style={styles.button}
     onClick={getAccountData}
   >
     <ActionExitToApp />
