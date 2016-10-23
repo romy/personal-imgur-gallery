@@ -1,6 +1,6 @@
 import { fork } from 'redux-saga/effects';
 
-import watchGetAccountData from './interactions/imgur/sagas/watch-get-account-data';
+import watchGetAccountData from 'interactions/user/sagas/watch-get-account-data';
 
 
 function* sagas() {

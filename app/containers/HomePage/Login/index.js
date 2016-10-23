@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
 import R from 'ramda';
 
-import getAccountDataAction from '../../../interactions/imgur/actions';
+import getAccountDataAction from 'interactions/user/actions';
 
 
 const Login = ({ getAccountData }) => // eslint-disable-line react/prop-types
