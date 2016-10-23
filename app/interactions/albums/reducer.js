@@ -11,6 +11,10 @@ const reducer = (state = initialState, action = {}) => {
       return state.merge({
         error: action.message,
       });
+    case 'GET_ALBUM_IMAGES':
+      return state.merge({
+        selected: action.payload.id,
+      });
     case 'GET_ALBUM_SUCCESS':
       return state.mergeIn(
         [action.payload.id],

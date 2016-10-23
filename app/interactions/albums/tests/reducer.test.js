@@ -42,6 +42,21 @@ describe('albums reducer', () => {
     expect(state).toEqual(expectedState);
   });
 
+  it('should return the payload from action GET_ALBUM_IMAGES', () => {
+    const action = {
+      type: 'GET_ALBUM_IMAGES',
+      payload: {
+        id: 'albumId',
+      },
+    };
+    const expectedState = fromJS({
+      selected: 'albumId',
+    });
+    const state = reducer(undefined, action);
+
+    expect(state).toEqual(expectedState);
+  });
+
   it('should return the payload from action GET_ALBUM_SUCCESS', () => {
     const action = {
       type: 'GET_ALBUM_SUCCESS',
