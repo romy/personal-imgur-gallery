@@ -4,7 +4,7 @@ import { fromJS } from 'immutable';
 import reducer from '../reducer';
 
 
-describe('imgur reducer', () => {
+describe('user reducer', () => {
   it('should return the initial state', () => {
     const initialState = fromJS({
       token: null,
