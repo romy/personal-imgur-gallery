@@ -6,5 +6,16 @@ const selectAlbumIds = (state) => {
   return albums.keySeq().toJS();
 };
 
+const selectAlbumTitle = (state, props) => {
+  const album = state.getIn(['albums', props.id]);
+  return album.get('title');
+};
 
-export { selectAlbumIds };
+const selectImageIds = (state, props) => {
+  const album = state.getIn(['albums', props.id]);
+  const images = album.get('images', Immutable.Map()); // eslint-disable-line new-cap
+  return images.keySeq().toJS();
+};
+
+
+export { selectAlbumIds, selectAlbumTitle, selectImageIds };
