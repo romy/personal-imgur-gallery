@@ -12,9 +12,9 @@ describe('<Welcome />', () => {
     expect(app.find('h1').length).toEqual(1);
   });
 
-  it('should render Login', () => {
+  it('should render a login button', () => {
     const app = shallow(<Welcome />);
 
-    expect(app.find('Login').length).toEqual(1);
+    expect(app.find('LoginButton').length).toEqual(1);
   });
 });

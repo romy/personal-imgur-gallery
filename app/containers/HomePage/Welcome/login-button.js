@@ -9,7 +9,7 @@ import R from 'ramda';
 import getAccountDataAction from 'interactions/user/actions';
 
 
-const Login = ({ getAccountData }) => // eslint-disable-line react/prop-types
+const LoginButton = ({ getAccountData }) => // eslint-disable-line react/prop-types
   <RaisedButton
     label="Login with Imgur"
     fullWidth
@@ -32,9 +32,9 @@ const enhance = R.pipe(
     getAccountData: React.PropTypes.func,
   }),
   connect(null, mapDispatchToProps),
-  setDisplayName('Login'),
+  setDisplayName('LoginButton'),
 );
 
 
-export { Login };
-export default enhance(Login);
+export { LoginButton };
+export default enhance(LoginButton);
