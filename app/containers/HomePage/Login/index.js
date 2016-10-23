@@ -11,9 +11,9 @@ import getAccountDataAction from 'interactions/user/actions';
 
 const Login = ({ getAccountData }) => // eslint-disable-line react/prop-types
   <RaisedButton
-    label="login with imgur"
+    label="Login with Imgur"
     fullWidth
-    style={{ marginTop: '15%' }}
+    style={{ marginTop: '2%' }}
     onClick={getAccountData}
   >
     <ActionExitToApp />

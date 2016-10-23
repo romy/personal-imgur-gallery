@@ -7,14 +7,14 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React from 'react';
 
-import Login from './Login';
+import Welcome from './Welcome';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-        <Login />
+        <Welcome />
       </MuiThemeProvider>
     );
   }

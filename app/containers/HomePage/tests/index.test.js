@@ -12,9 +12,9 @@ describe('<HomePage />', () => {
     expect(app.find('MuiThemeProvider').length).toEqual(1);
   });
 
-  it('should render Login', () => {
+  it('should render Welcome', () => {
     const app = shallow(<HomePage />);
 
-    expect(app.find('Login').length).toEqual(1);
+    expect(app.find('Welcome').length).toEqual(1);
   });
 });
