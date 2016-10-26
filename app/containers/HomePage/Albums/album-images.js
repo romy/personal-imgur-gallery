@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import { GridList } from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import PhotoAlbum from 'material-ui/svg-icons/image/photo-album';
 import React from 'react';
 import R from 'ramda';
 import { setDisplayName, setPropTypes } from 'recompose';
@@ -22,6 +24,10 @@ const styles = {
     overflowY: 'auto',
     margin: '2%',
   },
+  icon: {
+    width: 36,
+    height: 36,
+  },
 };
 
 const AlbumImages = ({ title, imageIds, id }) => { // eslint-disable-line react/prop-types
@@ -36,6 +42,9 @@ const AlbumImages = ({ title, imageIds, id }) => { // eslint-disable-line react/
 
   return (
     <div>
+      <IconButton iconStyle={styles.icon}>
+        <PhotoAlbum />
+      </IconButton>
       <h1 style={styles.header}>Images of {title}</h1>
       <div style={styles.grid}>
         <GridList cellHeight={400} style={styles.gridList}>
