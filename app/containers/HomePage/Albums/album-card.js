@@ -1,7 +1,7 @@
 import { Card, CardActions, CardMedia, CardTitle, CardText } from 'material-ui/Card';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setDisplayName, setPropTypes } from 'recompose';
+import { setDisplayName, setPropTypes, withHandlers } from 'recompose';
 import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
 import R from 'ramda';
@@ -14,7 +14,7 @@ const styles = {
   },
 };
 
-const AlbumCard = ({ title, src, description, getAlbumImages, id }) => // eslint-disable-line react/prop-types
+const AlbumCard = ({ title, src, description, onClick }) => // eslint-disable-line react/prop-types
   <Card style={styles.card}>
     <CardMedia overlay={<CardTitle title={title} />} >
       <img src={src} alt={title} />
@@ -23,7 +23,7 @@ const AlbumCard = ({ title, src, description, getAlbumImages, id }) => // eslint
       <RaisedButton
         label="View all images"
         fullWidth
-        onClick={() => getAlbumImages(id)}
+        onClick={onClick}
       />
     </CardActions>
     <CardText>
@@ -52,6 +52,11 @@ const enhance = R.pipe(
     src: React.PropTypes.string,
     description: React.PropTypes.string,
     title: React.PropTypes.string,
+    onClick: React.PropTypes.func,
+  }),
+  withHandlers({
+    onClick: (props) =>
+      R.partial(props.getAlbumImages, [props.id]),
   }),
   connect(mapStateToProps, mapDispatchToProps),
   setDisplayName('AlbumCard'),
