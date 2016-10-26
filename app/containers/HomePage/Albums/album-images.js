@@ -1,11 +1,13 @@
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { GridList } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import PhotoAlbum from 'material-ui/svg-icons/image/photo-album';
 import React from 'react';
 import R from 'ramda';
-import { setDisplayName, setPropTypes } from 'recompose';
+import { setDisplayName, setPropTypes, withHandlers } from 'recompose';
 
+import { deselectAlbum as deselectAlbumAction } from 'interactions/selection/actions';
 import ImageTile from './image-tile';
 import { selectAlbumTitle, selectImageIds } from 'interactions/albums/selectors';
 
@@ -30,7 +32,7 @@ const styles = {
   },
 };
 
-const AlbumImages = ({ title, imageIds, id }) => { // eslint-disable-line react/prop-types
+const AlbumImages = ({ title, imageIds, id, onClick }) => { // eslint-disable-line react/prop-types
   let imageTiles;
 
   if (imageIds) {
@@ -42,7 +44,7 @@ const AlbumImages = ({ title, imageIds, id }) => { // eslint-disable-line react/
 
   return (
     <div>
-      <IconButton iconStyle={styles.icon}>
+      <IconButton iconStyle={styles.icon} onClick={onClick}>
         <PhotoAlbum />
       </IconButton>
       <h1 style={styles.header}>Images of {title}</h1>
@@ -61,11 +63,21 @@ const mapStateToProps = (state, props) =>
     imageIds: selectImageIds(state, props),
   });
 
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({
+    deselectAlbum: deselectAlbumAction,
+  }, dispatch);
+
 const enhance = R.pipe(
   setPropTypes({
     id: React.PropTypes.string,
+    onClick: React.PropTypes.func,
   }),
-  connect(mapStateToProps),
+  withHandlers({
+    onClick: (props) =>
+      props.deselectAlbum,
+  }),
+  connect(mapStateToProps, mapDispatchToProps),
   setDisplayName('AlbumImages'),
 );
 
