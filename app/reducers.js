@@ -9,6 +9,7 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 
 import albumsReducer from 'interactions/albums/reducer';
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
+import selectionReducer from 'interactions/selection/reducer';
 import userReducer from 'interactions/user/reducer';
 
 /*
@@ -45,6 +46,7 @@ function routeReducer(state = routeInitialState, action) {
 export default function createReducer(asyncReducers) {
   return combineReducers({
     albums: albumsReducer,
+    selection: selectionReducer,
     user: userReducer,
     route: routeReducer,
     language: languageProviderReducer,
