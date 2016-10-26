@@ -4,7 +4,7 @@ import getAlbumImages from './get-album-images';
 
 
 function* watchGetAlbumImages() {
-  yield* takeLatest('GET_ALBUM_IMAGES', getAlbumImages);
+  yield* takeLatest('SELECT_ALBUM', getAlbumImages);
 }
 
 

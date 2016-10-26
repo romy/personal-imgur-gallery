@@ -1,6 +1,6 @@
 import expect from 'expect';
 
-import { deselectAlbum, getAlbumImages } from '../actions';
+import { deselectAlbum, selectAlbum } from '../actions';
 
 
 describe('action creator deselectAlbum', () => {
@@ -11,15 +11,15 @@ describe('action creator deselectAlbum', () => {
   });
 });
 
-describe('action creator getAlbumImages', () => {
-  it('should return an action with type GET_ALBUM_IMAGES', () => {
-    const action = getAlbumImages();
+describe('action creator selectAlbum', () => {
+  it('should return an action with type SELECT_ALBUM', () => {
+    const action = selectAlbum();
 
-    expect(action.type).toEqual('GET_ALBUM_IMAGES');
+    expect(action.type).toEqual('SELECT_ALBUM');
   });
 
   it('should return an action with a payload', () => {
-    const action = getAlbumImages('id');
+    const action = selectAlbum('id');
 
     expect(action.payload.id).toEqual('id');
   });

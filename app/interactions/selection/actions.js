@@ -3,11 +3,11 @@ const deselectAlbum = () =>
     type: 'DESELECT_ALBUM',
   });
 
-const getAlbumImages = (id) =>
+const selectAlbum = (id) =>
   ({
-    type: 'GET_ALBUM_IMAGES',
+    type: 'SELECT_ALBUM',
     payload: { id },
   });
 
 
-export { deselectAlbum, getAlbumImages };
+export { deselectAlbum, selectAlbum };

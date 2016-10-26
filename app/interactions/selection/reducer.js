@@ -5,7 +5,7 @@ const initialState = fromJS({});
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case 'GET_ALBUM_IMAGES':
+    case 'SELECT_ALBUM':
       return state.merge({
         albumId: action.payload.id,
       });

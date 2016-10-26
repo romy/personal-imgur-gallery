@@ -5,11 +5,11 @@ import watchGetAlbumImages from '../watch-get-album-images';
 
 
 describe('saga watchGetAlbumImages', () => {
-  it('should watch action GET_ALBUM_IMAGES', () => {
+  it('should watch action SELECT_ALBUM', () => {
     const gen = watchGetAlbumImages();
     const next = gen.next();
 
-    expect(next.value.TAKE.pattern).toEqual('GET_ALBUM_IMAGES');
+    expect(next.value.TAKE.pattern).toEqual('SELECT_ALBUM');
   });
 
   it('should call function getAlbumImages', () => {

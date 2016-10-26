@@ -12,9 +12,9 @@ describe('selection reducer', () => {
     expect(state).toEqual(initialState);
   });
 
-  it('should return the payload from action GET_ALBUM_IMAGES', () => {
+  it('should return the payload from action SELECT_ALBUM', () => {
     const action = {
-      type: 'GET_ALBUM_IMAGES',
+      type: 'SELECT_ALBUM',
       payload: { id: 'albumId' },
     };
     const expectedState = fromJS({

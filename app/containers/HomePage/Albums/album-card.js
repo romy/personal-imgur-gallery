@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
 import R from 'ramda';
 
-import { getAlbumImages as getAlbumImagesAction } from 'interactions/selection/actions';
+import { selectAlbum as selectAlbumAction } from 'interactions/selection/actions';
 
 const styles = {
   card: {
@@ -44,7 +44,7 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({
-    getAlbumImages: getAlbumImagesAction,
+    selectAlbum: selectAlbumAction,
   }, dispatch);
 
 const enhance = R.pipe(
@@ -56,7 +56,7 @@ const enhance = R.pipe(
   }),
   withHandlers({
     onClick: (props) =>
-      R.partial(props.getAlbumImages, [props.id]),
+      R.partial(props.selectAlbum, [props.id]),
   }),
   connect(mapStateToProps, mapDispatchToProps),
   setDisplayName('AlbumCard'),
