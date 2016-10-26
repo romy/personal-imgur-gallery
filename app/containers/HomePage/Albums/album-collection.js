@@ -9,8 +9,8 @@ import { selectUsername } from 'interactions/user/selectors';
 
 const styles = {
   header: {
-    margin: '5%',
-    fontSize: '300%',
+    margin: '2%',
+    fontSize: '200%',
   },
 };
 
