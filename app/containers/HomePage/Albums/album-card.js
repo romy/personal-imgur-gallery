@@ -6,7 +6,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
 import R from 'ramda';
 
-import { getAlbumImages as getAlbumImagesAction } from 'interactions/albums/actions';
+import { getAlbumImages as getAlbumImagesAction } from 'interactions/selection/actions';
 
 const styles = {
   card: {
