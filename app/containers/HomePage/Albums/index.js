@@ -36,7 +36,7 @@ Albums.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const selectedAlbum = state.getIn(['albums', 'selected']);
+  const selectedAlbum = state.getIn(['selection', 'albumId']);
 
   return ({
     isAlbumSelected: !!selectedAlbum,
