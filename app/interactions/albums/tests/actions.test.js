@@ -21,6 +21,6 @@ describe('action creator getAlbumImages', () => {
   it('should return an action with a payload', () => {
     const action = getAlbumImages('id');
 
-    expect(action.payload).toEqual('id');
+    expect(action.payload.id).toEqual('id');
   });
 });

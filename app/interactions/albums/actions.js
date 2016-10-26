@@ -6,7 +6,7 @@ const getAlbums = () =>
 const getAlbumImages = (id) =>
   ({
     type: 'GET_ALBUM_IMAGES',
-    payload: id,
+    payload: { id },
   });
 
 

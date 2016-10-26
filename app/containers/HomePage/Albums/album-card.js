@@ -23,7 +23,7 @@ const AlbumCard = ({ title, src, description, getAlbumImages, id }) => // eslint
       <RaisedButton
         label="View all images"
         fullWidth
-        onClick={() => getAlbumImages({ id })}
+        onClick={() => getAlbumImages(id)}
       />
     </CardActions>
     <CardText>
